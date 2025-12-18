@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>User Input Page</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Enter Your Name</h2>
+        <form id="nameForm">
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="submit" value="Submit">
+        </form>
+        <p id="greeting"></p>
+    </main>
+    <footer>
+        &copy; 2025 My Website
+    </footer>
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            if(name) {
+                document.getElementById('greeting').textContent = `Hello, ${name}!`;
+            } else {
+                document.getElementById('greeting').textContent = "Please enter a valid name.";
+            }
+        });
+    </script>
+</body>
+</html>
